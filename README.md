@@ -10,6 +10,7 @@ Copy this text to the Makefile / Скопируйте этот текст в Mak
 LF = conio
 IF = File.cpp
 RES = result
+PREF = /usr/local
 
 all:
 	g++ -c $(LF).cpp
@@ -17,6 +18,9 @@ all:
 	g++ $(IF) -L. -l$(LF) -o $(RES) -static
 run:
 	./$(RES)
+install:
+	sudo cp $(LF).h $(PREF)/include
+	sudo cp lib$(LF).a $(PREF)/bin
 clean:
 	rm $(LF).o $(RES)
 ```
@@ -28,6 +32,7 @@ Copy this text to the Makefile / Скопируйте этот текст в Mak
 LF = conio
 IF = File.cpp
 RES = result
+PREF = /usr/local
 
 all:
 	g++ -c $(LF).cpp -fPIC
@@ -36,8 +41,8 @@ all:
 run:
 	export LD_LIBRARY_PATH=. && ./$(RES)
 install:
-	sudo cp conio.h /usr/include
-	sudo cp conio.h /usr/include
+	sudo cp $(LF).h $(PREF)/include
+	sudo cp lib$(LF).so $(PREF)/bin
 clean:
 	rm $(LF).o $(RES)
 ```
