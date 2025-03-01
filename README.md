@@ -35,6 +35,9 @@ all:
 	g++ $(IF) -L. -l$(LF) -o $(RES)
 run:
 	export LD_LIBRARY_PATH=. && ./$(RES)
+install:
+	sudo cp conio.h /usr/include
+	sudo cp conio.h /usr/include
 clean:
 	rm $(LF).o $(RES)
 ```
