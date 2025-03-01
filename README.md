@@ -38,3 +38,30 @@ run:
 clean:
 	rm $(LF).o $(RES)
 ```
+
+Example of use in a project / Пример использования в проекте:
+```
+#include <iostream>
+#include "conio.h"
+
+int main() {
+	conio::init();
+	atexit(conio::reset);
+	while (true){ 
+		if (conio::kbhit()) {
+			switch (static_cast<int>(conio::getch())) {
+				case 27:
+					system("clear");
+					return 0;
+				case 75:
+					std::cout << "Left button" << endl;
+					break;
+				case 77:
+					std::cout << "Right button" << endl;
+					break;
+			}
+		}
+	}
+	return 0;
+}
+```
