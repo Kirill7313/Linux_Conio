@@ -1,9 +1,11 @@
-# Linux_Conio
-English: A library that implements the functionality of the kbhit and getch commands on GNU/Linux systems / Русский:  Библиотека, реализующая функционал команд kbhit и getch в системах GNU/Linux
+# Linux Conio Library
+English: A library that implements the functionality of the kbhit and getch commands from conio in DOS systems on GNU/Linux / Русский:  Библиотека, реализующая функционал команд kbhit и getch из conio в DOS-системах в GNU/Linux
 
-Как превратить это в библиотеку и связать с файлом:
-Статическая:
-Скопируйте этот текст в Makefile
+How do I turn this into a library and link it to a file / Как превратить это в библиотеку и связать с файлом:
+
+Static / Статическая:
+
+Copy this text to the Makefile / Скопируйте этот текст в Makefile
 ```
 LF = conio
 IF = File.cpp
@@ -19,8 +21,9 @@ clean:
 	rm $(LF).o $(RES)
 ```
 
-Статическая:
-Скопируйте этот текст в Makefile
+Dynamic / Динамическая:
+
+Copy this text to the Makefile / Скопируйте этот текст в Makefile
 ```
 LF = conio
 IF = File.cpp
